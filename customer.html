@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RetailPulse AI Customer Dashboard</title>
+
+<style>
+
+body{
+font-family:Segoe UI;
+background:#f4f7fb;
+margin:0;
+color:#333;
+}
+
+.header{
+background:linear-gradient(90deg,#1e90ff,#00c6ff);
+padding:20px;
+text-align:center;
+color:white;
+font-size:28px;
+font-weight:bold;
+}
+
+.container{
+width:80%;
+margin:auto;
+margin-top:30px;
+}
+
+.search{
+text-align:center;
+margin-bottom:25px;
+}
+
+input{
+padding:10px;
+width:220px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+padding:10px 18px;
+background:#1e90ff;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0f78d1;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+margin-bottom:20px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.stats{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.stat{
+flex:1;
+background:#f1f6ff;
+padding:15px;
+border-radius:10px;
+text-align:center;
+}
+
+.stat h3{
+margin:5px;
+color:#555;
+}
+
+.stat p{
+font-size:24px;
+color:#1e90ff;
+font-weight:bold;
+}
+
+.bill{
+display:flex;
+justify-content:space-between;
+padding:10px;
+border-bottom:1px solid #eee;
+}
+
+.bill:last-child{
+border-bottom:none;
+}
+
+.footer{
+text-align:center;
+padding:20px;
+color:#777;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+RetailPulse AI – Customer Dashboard
+</div>
+
+<div class="container">
+
+<div class="search">
+
+<input id="phone" placeholder="Enter Phone Number">
+<button onclick="loadCustomer()">Search</button>
+
+</div>
+
+<div class="card">
+
+<h2>Customer: <span id="customer"></span></h2>
+
+<div class="stats">
+
+<div class="stat">
+<h3>Total Visits</h3>
+<p id="visits">0</p>
+</div>
+
+<div class="stat">
+<h3>Total Spent</h3>
+<p id="spent">₹0</p>
+</div>
+
+<div class="stat">
+<h3>Average Bill</h3>
+<p id="avg">₹0</p>
+</div>
+
+<div class="stat">
+<h3>Reward Points</h3>
+<p id="points">0</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Purchase History</h2>
+
+<div class="bill">
+<b>Bill ID</b>
+<b>Date</b>
+<b>Total</b>
+<b>Payment</b>
+</div>
+
+<div id="history"></div>
+
+</div>
+
+</div>
+
+<div class="footer">
+RetailPulse AI Smart Retail Experience
+</div>
+
+<script type="module" src="customer.js"></script>
+
+</body>
+
+</html>

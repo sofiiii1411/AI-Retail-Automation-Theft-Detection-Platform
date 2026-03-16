@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Smart Retail Billing System</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script type="module" src="billing.js"></script>
+
+</head>
+
+<body>
+
+<header>
+<h1 class="title">SMART RETAIL BILLING SYSTEM</h1>
+</header>
+
+<div class="container">
+
+<!-- CUSTOMER -->
+
+<div class="card">
+
+<h2>Customer Phone</h2>
+
+<input id="phone" placeholder="Enter Phone Number">
+
+<button id="loadHistory">Load History</button>
+
+<div id="history"></div>
+
+</div>
+
+<!-- PRODUCT -->
+
+<div class="card">
+
+<h2>Add Product</h2>
+
+<div class="row">
+
+<input id="product" placeholder="Product">
+<input id="price" type="number" placeholder="Price">
+<input id="qty" type="number" placeholder="Qty">
+
+<button id="addBtn">Add</button>
+
+</div>
+
+</div>
+
+<!-- BILL -->
+
+<div class="card">
+
+<h2>Bill Items</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>Product</th>
+<th>Qty</th>
+<th>Price</th>
+<th>Total</th>
+</tr>
+</thead>
+
+<tbody id="billTable"></tbody>
+
+</table>
+
+<h3 id="total">Total: ₹0</h3>
+
+<select id="payment">
+<option>UPI</option>
+<option>CASH</option>
+<option>CARD</option>
+</select>
+
+<button id="generateQR">Generate QR</button>
+
+</div>
+
+<!-- QR PAYMENT -->
+
+<div class="card">
+
+<h2>Scan To Pay</h2>
+
+<div id="qrcode"></div>
+
+<button id="confirmPayment">Confirm Payment</button>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

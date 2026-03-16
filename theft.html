@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RetailPulse AI Theft Detection</title>
+
+<script type="module" src="theft.js"></script>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f4f7fb;
+text-align:center;
+color:#333;
+}
+
+/* Header */
+
+header{
+background:linear-gradient(90deg,#1e90ff,#00c6ff);
+color:white;
+padding:20px;
+font-size:28px;
+font-weight:bold;
+}
+
+/* Camera box */
+
+.camera-box{
+width:700px;
+margin:40px auto;
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+video{
+width:100%;
+border-radius:10px;
+background:black;
+}
+
+/* Status */
+
+.status{
+margin-top:15px;
+font-size:18px;
+color:#666;
+}
+
+/* Theft alert */
+
+.alert{
+margin-top:30px;
+background:red;
+color:white;
+padding:20px;
+font-size:22px;
+border-radius:10px;
+display:none;
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+0%{opacity:1}
+50%{opacity:0.3}
+100%{opacity:1}
+}
+
+footer{
+margin-top:40px;
+color:#777;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+RetailPulse AI – Live Theft Detection
+</header>
+
+<div class="camera-box">
+
+<video id="camera" autoplay></video>
+
+<div class="status">
+AI Camera Monitoring Store Activity...
+</div>
+
+</div>
+
+<div id="alert" class="alert">
+⚠ THEFT DETECTED
+Product removed without billing
+Alert sent to store owner
+</div>
+
+<footer>
+RetailPulse AI Smart Security System
+</footer>
+
+<script>
+
+/* Start Live Camera */
+
+const video = document.getElementById("camera");
+
+navigator.mediaDevices.getUserMedia({ video:true })
+.then(stream=>{
+video.srcObject = stream;
+})
+.catch(err=>{
+console.log("Camera access denied");
+});
+
+</script>
+
+</body>
+
+</html>
